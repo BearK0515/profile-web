@@ -60,10 +60,10 @@ const Navbar = () => {
             Log in
           </div>
           <div className='menu-btn'>Home</div>
+          <div className='menu-btn'>Skills</div>
           <div className='menu-btn'>Side Projects</div>
           <div className='menu-btn'>About Me</div>
           <div className='menu-btn'>Work Experience</div>
-          <div className='menu-btn'>Skills</div>
           <div className='flex gap-4'>
             <GithubIcon size={30} color='white' className=' cursor-pointer' />
             <CakeResumeIcon

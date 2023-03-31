@@ -60,8 +60,8 @@ const Skills = () => {
 
 const Skill = ({ icon, content, title }) => {
   return (
-    <div className=' flex flex-col items-center gap-4 w-full mb-4 laptop:w-1/3'>
-      <div className={` w-[125px] h-[125px] ${icon} bg-cover text-white`} />
+    <div className='flex flex-col items-center gap-4 w-full mb-4 laptop:w-1/3'>
+      <div className={`animate-bounce w-[125px] h-[125px] ${icon} bg-cover text-white`} />
       <h3 className='text-2xl'>{title}</h3>
       <div className=' text-base w-4/5 laptop:w-full'>
         {content?.map((item) => (

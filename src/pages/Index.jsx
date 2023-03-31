@@ -7,20 +7,32 @@ import AboutMe from "../components/AboutMe";
 import SecondBanner from "../components/SecondBanner";
 import WorkExperience from "../components/WorkExperience";
 import Footer from "../components/Footer";
+import SideProjectModal from "../commons/SideProjectModal";
 
 const Index = () => {
+  const [isOpenSideProjectModal, setIsOpenSideProjectModal] = useState(false);
   return (
     <>
       <Navbar />
       <Home />
       <Skills />
-      <SideProjects />
+      <SideProjects setIsOpenSideProjectModal={setIsOpenSideProjectModal} />
       <div className=' w-full h-full bg-downSection bg-fixed bg-cover bg-center py-8'>
         <AboutMe />
         <SecondBanner />
         <WorkExperience />
       </div>
       <Footer />
+      {/* {isOpenSideProjectModal && (
+        <SideProjectModal
+          isOpenSideProjectModal={isOpenSideProjectModal}
+          setIsOpenSideProjectModal={setIsOpenSideProjectModal}
+        />
+      )} */}
+      <SideProjectModal
+        isOpenSideProjectModal={isOpenSideProjectModal}
+        setIsOpenSideProjectModal={setIsOpenSideProjectModal}
+      />
     </>
   );
 };
