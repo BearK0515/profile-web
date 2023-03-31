@@ -1,0 +1,33 @@
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial','Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+@tailwind base;
+@tailwind components;
+.menu {
+  @apply w-6 h-0.5 bg-white z-20
+}
+.menu::before {
+  @apply w-6 h-0.5 bg-white absolute
+}
+.menu::after {
+  @apply w-6 h-0.5 bg-white absolute
+}
+.menu-btn{
+@apply text-white text-base uppercase cursor-pointer hover:text-hover-color
+}
+.title-bottom{
+  @apply w-12 h-1 mx-auto mb-6 border-none bg-white
+}
+
+@tailwind utilities;
+
+@layer utilities {
+  .animation-delay {
+    animation-delay: -15s;
+  }
+}
