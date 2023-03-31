@@ -22,7 +22,10 @@ const Navbar = () => {
         setIsOpenMenu(false);
       }
     };
-    window.addEventListener("resize", handleResize);
+    if (window.innerWidth >= 860){
+      setIsOpenMenu(true);
+    }
+      window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
