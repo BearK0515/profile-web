@@ -18,6 +18,7 @@ module.exports = {
         WorkSkill: "url('../src/assets/icons/light/001.svg')",
         WebFrontend: "url('../src/assets/icons/light/002.png')",
         LanguageSkill: "url('../src/assets/icons/light/003.svg')",
+        GoTop: "url('../src/assets/icons/light/gotop.png')",
         Logo: "url('../src/assets/images/Logo.png')",
       },
       keyframes: {
