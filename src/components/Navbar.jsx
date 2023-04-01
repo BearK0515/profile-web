@@ -22,10 +22,10 @@ const Navbar = () => {
         setIsOpenMenu(false);
       }
     };
-    if (window.innerWidth >= 860){
+    if (window.innerWidth >= 860) {
       setIsOpenMenu(true);
     }
-      window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -59,11 +59,29 @@ const Navbar = () => {
             <UserIcon size={30} />
             Log in
           </div>
-          <div className='menu-btn'>Home</div>
-          <div className='menu-btn'>Skills</div>
-          <div className='menu-btn'>Side Projects</div>
-          <div className='menu-btn'>About Me</div>
-          <div className='menu-btn'>Work Experience</div>
+          <a href='#home' className='menu-btn' onClick={handleToogleMenu}>
+            Home
+          </a>
+          <a href='#skills' className='menu-btn' onClick={handleToogleMenu}>
+            Skills
+          </a>
+          <a
+            href='#sideProjects'
+            className='menu-btn'
+            onClick={handleToogleMenu}
+          >
+            Side Projects
+          </a>
+          <a href='#about-me' className='menu-btn' onClick={handleToogleMenu}>
+            About Me
+          </a>
+          <a
+            href='#work-experiece'
+            className='menu-btn'
+            onClick={handleToogleMenu}
+          >
+            Work Experience
+          </a>
           <div className='flex gap-4'>
             <GithubIcon size={30} color='white' className=' cursor-pointer' />
             <CakeResumeIcon

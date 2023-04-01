@@ -23,12 +23,6 @@ const Index = () => {
         <WorkExperience />
       </div>
       <Footer />
-      {/* {isOpenSideProjectModal && (
-        <SideProjectModal
-          isOpenSideProjectModal={isOpenSideProjectModal}
-          setIsOpenSideProjectModal={setIsOpenSideProjectModal}
-        />
-      )} */}
       <SideProjectModal
         isOpenSideProjectModal={isOpenSideProjectModal}
         setIsOpenSideProjectModal={setIsOpenSideProjectModal}

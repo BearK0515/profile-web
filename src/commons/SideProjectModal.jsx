@@ -13,15 +13,15 @@ const SideProjectModal = ({
     <>
       <div
         className={`backdrop bg-black/30 z-10 ${
-          isOpenSideProjectModal ? "scale-100 " : "scale-0 "
+          isOpenSideProjectModal ? "visible" : "invisible"
         }`}
       ></div>
       <div
         className={`fixed top-0 bottom-0 right-0 left-0 m-auto w-full h-[calc(100%-64px)] flex flex-col items-center bg-white my-16 laptop:w-4/5 laptop:h-4/5 laptop:flex-row laptop:pt-0 ${
           isOpenSideProjectModal
-            ? "translate-y-0 scale-100"
-            : "translate-y-full scale-0"
-        } ease-in duration-500 z-10`}
+            ? "translate-y-0 opacity-100 visible"
+            : "translate-y-10 opacity-0 invisible"
+        } ease-linear duration-300 z-10`}
       >
         <div className=' relative w-full h-[50%] py-4 overflow-hidden laptop:max-w-[50%] laptop:h-full flex justify-center items-center'>
           <img
