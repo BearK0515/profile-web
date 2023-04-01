@@ -44,8 +44,10 @@ const SideProject = ({
         }}
       >
         <h3 className=' text-xl '>{title}</h3>
-        <div className=' w-4/5 text-base text-center overflow-hidden'>
-          {content}
+        <div className=' w-4/5 text-base text-left overflow-hidden'>
+          {content.map((item) => {
+            return <p>{item}</p>;
+          })}
         </div>
       </div>
       <img src={sideProjectImg} alt='' className='' />

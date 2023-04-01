@@ -51,9 +51,13 @@ const WorkExperienceCard = ({ index, job, company, time, content }) => {
         <p
           className={`absolute top-[calc(100%+20px)] ${
             index % 2 === 0 ? "right-0" : "left-0"
-          } m-auto w-[calc(100vw-100px)] ${content===""?"":"p-6"} rounded-md bg-red-500 text-white text-base opacity-0 z-20 invisible group-hover:opacity-100 group-hover:visible group-hover:scale-100 duration-300 laptop:max-w-xl`}
+          } m-auto w-[calc(100vw-100px)] ${
+            content === "" ? "" : "p-6"
+          } rounded-md bg-red-500 text-white text-base opacity-0 z-20 invisible group-hover:opacity-100 group-hover:visible group-hover:scale-100 duration-300 laptop:max-w-xl`}
         >
-          {content}
+          {content.map((item) => {
+            return <p>{item}</p>;
+          })}
         </p>
       </div>
     </div>

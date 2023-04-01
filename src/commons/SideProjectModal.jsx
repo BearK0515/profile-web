@@ -33,12 +33,11 @@ const SideProjectModal = ({
         <div className='flex flex-col items-center py-4 laptop:w-full laptop:h-full laptop:justify-start'>
           <h3
             className='text-xl font-bold pb-2'
-            onClick={() => console.log(sideProjects)}
           >
             {sideProjects[0].title}
           </h3>
           <div className=' w-4/5 mx-auto text-base'>
-            {sideProjects[0].content}
+            {sideProjects[0].content.map((item)=>{return (<p>{item}</p>)})}
           </div>
         </div>
         <button
