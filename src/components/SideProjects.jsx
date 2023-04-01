@@ -4,7 +4,7 @@ import sideProjects from "../constants/sideProjects";
 
 const SideProjects = ({ setIsOpenSideProjectModal }) => {
   return (
-    <section className='flex flex-col items-center w-full h-full py-8 text-4xl font-bold laptop:text-[68px] laptop:leading-[68px] '>
+    <section id="sideProjects" className='flex flex-col items-center w-full h-full py-8 text-4xl font-bold laptop:text-[68px] laptop:leading-[68px] '>
       <div
         className=' flex justify-center py-6'
         onClick={() => console.log(sideProjects)}

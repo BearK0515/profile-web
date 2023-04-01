@@ -5,7 +5,7 @@ import skills from "../constants/skills";
 
 const Skills = () => {
   return (
-    <section className=' flex flex-col items-center justify-between w-full h-full bg-skills bg-fixed bg-cover bg-center py-8'>
+    <section id="dkills" className=' flex flex-col items-center justify-between w-full h-full bg-skills bg-fixed bg-cover bg-center py-8'>
       <div className=' w-full h-full text-4xl text-white font-bold laptop:text-[68px] laptop:leading-[68px] '>
         <div
           className=' flex justify-center py-6'
@@ -61,7 +61,7 @@ const Skills = () => {
 const Skill = ({ icon, content, title }) => {
   return (
     <div className='flex flex-col items-center gap-4 w-full mb-4 laptop:w-1/3'>
-      <div className={`animate-bounce w-[125px] h-[125px] ${icon} bg-cover text-white`} />
+      <div className={` animate-ping2 w-[125px] h-[125px] ${icon} bg-cover text-white`} />
       <h3 className='text-2xl'>{title}</h3>
       <div className=' text-base w-4/5 laptop:w-full'>
         {content?.map((item) => (

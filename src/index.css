@@ -26,6 +26,18 @@
 .backdrop{
   @apply fixed top-0 bottom-0 right-0 left-0 h-screen w-screen backdrop-blur-md
 }
+.job-card{
+  @apply bg-blue-500 text-white rounded-md shadow-lg p-2
+}
+.job-card::before{
+  @apply w-4 h-4 rounded-full bg-blue-500 absolute z-10
+}
+.job-card::after{
+  @apply w-1/2 h-0.5 bg-gray-300 absolute
+}
+.timeline-container::before{
+  @apply w-1 h-[calc(100%-100px)] bg-red-500 absolute
+}
 
 @tailwind utilities;
 

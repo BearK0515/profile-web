@@ -29,10 +29,15 @@ module.exports = {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-200%)" },
         },
+        ping2: {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.08)" },
+        },
       },
       animation: {
         marquee1: "marquee1 30s linear infinite",
         marquee2: "marquee2 30s linear infinite",
+        ping2: "ping2 .8s infinite alternate",
       },
     },
   },
