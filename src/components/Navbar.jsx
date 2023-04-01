@@ -4,7 +4,7 @@ import { CakeResumeIcon, GithubIcon, UserIcon } from "../assets/icons";
 const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [goTop, setGoTOp] = useState(false);
-
+  // 漢堡開關
   const handleToogleMenu = () => {
     if (window.innerWidth < 860) {
       setIsOpenMenu(!isOpenMenu);
@@ -19,13 +19,13 @@ const Navbar = () => {
     }
   };
 
-  const handleGoTop = ()=>{
+  const handleGoTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  }
-
+  };
+// 依照視窗大小控制Navbar布局
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 860) {
@@ -40,7 +40,7 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
+// 顯示/不顯示GoTop btn
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 300) {
@@ -125,11 +125,13 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-        <div
-          className={`animate-bounce fixed right-10 bottom-10 w-20 h-20 bg-cover bg-center bg-GoTop ${goTop?"visible opacity-100":"invisible opacity-0"} duration-300`}
-          onClick={handleGoTop}
-        />
+      {/* GoTOP */}
+      <div
+        className={`animate-bounce fixed right-10 bottom-10 w-20 h-20 bg-cover bg-center bg-GoTop ${
+          goTop ? "visible opacity-100" : "invisible opacity-0"
+        } duration-300`}
+        onClick={handleGoTop}
+      />
     </>
   );
 };
