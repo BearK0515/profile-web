@@ -37,7 +37,7 @@ const jobs = [
     job: "營養學系學士",
     company: "私立中國醫藥大學",
     time: "2005-2009",
-    content: ["",]
+    content: [""]
   },
 ];
 
