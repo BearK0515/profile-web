@@ -18,7 +18,7 @@ const Navbar = () => {
       setIsOpenMenu(true);
     }
   };
-
+// 回到頂部
   const handleGoTop = () => {
     window.scrollTo({
       top: 0,
@@ -86,7 +86,11 @@ const Navbar = () => {
           <a href='#home' className='menu-btn' onClick={handleToogleMenu}>
             Home
           </a>
-          <a href='#skills' className='menu-btn' onClick={handleToogleMenu}>
+          <a
+            href='#skills'
+            className='menu-btn'
+            onClick={handleToogleMenu}
+          >
             Skills
           </a>
           <a

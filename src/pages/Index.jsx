@@ -17,7 +17,10 @@ const Index = () => {
       <Home />
       <Skills />
       <SideProjects setIsOpenSideProjectModal={setIsOpenSideProjectModal} />
-      <div className=' w-full h-full bg-downSection bg-fixed bg-cover bg-center py-8'>
+      <div
+        id='about-me'
+        className=' w-full h-full bg-downSection bg-fixed bg-cover bg-center py-8'
+      >
         <AboutMe />
         <SecondBanner />
         <WorkExperience />
