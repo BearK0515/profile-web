@@ -18,14 +18,14 @@ const Navbar = () => {
       setIsOpenMenu(true);
     }
   };
-// 回到頂部
+  // 回到頂部
   const handleGoTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   };
-// 依照視窗大小控制Navbar布局
+  // 依照視窗大小控制Navbar布局
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 860) {
@@ -40,7 +40,7 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-// 顯示/不顯示GoTop btn
+  // 顯示/不顯示GoTop btn
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 300) {
@@ -86,11 +86,7 @@ const Navbar = () => {
           <a href='#home' className='menu-btn' onClick={handleToogleMenu}>
             Home
           </a>
-          <a
-            href='#skills'
-            className='menu-btn'
-            onClick={handleToogleMenu}
-          >
+          <a href='#skills' className='menu-btn' onClick={handleToogleMenu}>
             Skills
           </a>
           <a
