@@ -133,7 +133,7 @@ const Navbar = () => {
       <div
         className={`animate-bounce fixed right-10 bottom-10 w-20 h-20 bg-cover bg-center bg-GoTop z-30 ${
           goTop ? "visible opacity-100" : "invisible opacity-0"
-        } duration-300`}
+        } duration-300 cursor-pointer`}
         onClick={handleGoTop}
       />
     </>
