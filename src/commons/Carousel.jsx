@@ -10,8 +10,8 @@ const Carousel = ({ slides, autoSlide = false, autoSlideInterval = 3000 }) => {
   useEffect(() => {
     if (!autoSlide) return;
     if (current === 0) {
-      container.current.style.animation="none"
-      autoSlideInterval= 13
+      container.current.style.animation = "none";
+      autoSlideInterval = 15;
     }
     const slideInterval = setInterval(next, autoSlideInterval);
     return () => clearInterval(slideInterval);
