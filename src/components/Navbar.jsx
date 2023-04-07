@@ -112,6 +112,7 @@ const Navbar = () => {
               href='https://github.com/BearK0515'
               target='_blank'
               className=' cursor-pointer'
+              title='Github'
             >
               <GithubIcon size={30} color='white' />
             </a>
@@ -119,6 +120,7 @@ const Navbar = () => {
               href='https://www.cakeresume.com/s--qT3QtAnioznjNCIxYr9HAg--/harry-hsu0515'
               target='_blank'
               className=' cursor-pointer'
+              title='CakeResume'
             >
               <CakeResumeIcon size={30} color='white' />
             </a>
