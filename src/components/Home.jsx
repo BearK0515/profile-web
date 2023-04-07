@@ -6,7 +6,10 @@ const slides = ["前端工程師", "營養師", "外送員", "藥師助理", "�
 
 const Home = ({}) => {
   return (
-    <section id="home" className=' flex flex-col items-center justify-between w-full h-[calc(100vh-3rem)] bg-home bg-fixed bg-cover bg-center py-8'>
+    <section
+      id='home'
+      className=' flex flex-col items-center justify-between w-full h-[calc(100vh-3rem)] bg-home bg-fixed bg-cover bg-center py-8'
+    >
       <div className=' text-4xl text-white font-bold laptop:text-[68px] laptop:leading-[68px] '>
         <div className=' flex justify-center py-6'>BearK's PROFILES</div>
         <div className=' flex justify-between h-10 laptop:h-16'>
@@ -15,8 +18,22 @@ const Home = ({}) => {
         </div>
       </div>
       <div className=' flex gap-4'>
-        <GithubIcon size={30} color='white' className=' cursor-pointer' />
-        <CakeResumeIcon size={30} color='white' className=' cursor-pointer' />
+        <a
+          href='https://github.com/BearK0515'
+          target='_blank'
+          className=' cursor-pointer'
+          title='Github'
+        >
+          <GithubIcon size={30} color='white' />
+        </a>
+        <a
+          href='https://www.cakeresume.com/s--qT3QtAnioznjNCIxYr9HAg--/harry-hsu0515'
+          target='_blank'
+          className=' cursor-pointer'
+          title='CakeResume'
+        >
+          <CakeResumeIcon size={30} color='white' />
+        </a>
       </div>
     </section>
   );

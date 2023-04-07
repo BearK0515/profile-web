@@ -1,24 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, memo } from "react";
 
-const Carousel = ({ slides, autoSlide = false, autoSlideInterval = 3000 }) => {
+const Carousel = memo(({ slides, autoSlide = false, autoSlideInterval = 3000 }) => {
   const [current, setCurrent] = useState(0);
   const container = useRef(null);
+
   const next = () => {
-    setCurrent((current) => (current === slides.length ? 0 : current + 1));
+    setCurrent(current === slides.length ? 0 : current + 1);
   };
 
   useEffect(() => {
     if (!autoSlide) return;
+
+    let slideInterval = setInterval(next, autoSlideInterval);
+
     if (current === 0) {
       container.current.style.animation = "none";
-      autoSlideInterval = 20;
+      clearInterval(slideInterval);
+      slideInterval = setInterval(next, 20);
     }
-    const slideInterval = setInterval(next, autoSlideInterval);
+
     return () => clearInterval(slideInterval);
   }, [current]);
 
   return (
-    <ul className=' relative grow overflow-hidden'>
+    <ul className='relative grow overflow-hidden'>
       <div
         ref={container}
         className={`w-full h-full flex flex-col items-center ${
@@ -37,6 +42,6 @@ const Carousel = ({ slides, autoSlide = false, autoSlideInterval = 3000 }) => {
       </div>
     </ul>
   );
-};
+});
 
 export default Carousel;
