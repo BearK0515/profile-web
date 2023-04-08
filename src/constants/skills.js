@@ -1,7 +1,7 @@
 const skills = [
   {
     WorkSkill: {
-      icon: "bg-WorkSkill",
+      icon: "bg-WorkSkill dark:bg-darkWorkSkill",
       title: "工作技能",
       content: [
         "作業系統類：Windows XP",
@@ -12,7 +12,7 @@ const skills = [
   },
   {
     WebFrontend: {
-      icon: "bg-WebFrontend",
+      icon: "bg-WebFrontend dark:bg-darkWebFrontend",
       title: "Web前端技能",
       content: [
         "HTML、CSS、JavaScript-瀏覽器架構的三個語法",
@@ -26,7 +26,7 @@ const skills = [
   },
   {
     LanguageSkill: {
-      icon: "bg-LanguageSkill",
+      icon: "bg-LanguageSkill dark:bg-darkLanguageSkill",
       title: "語文能力",
       content: ["中文", "台語", "英文"],
     },

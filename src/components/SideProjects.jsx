@@ -4,14 +4,13 @@ import sideProjects from "../constants/sideProjects";
 
 const SideProjects = ({ setIsOpenSideProjectModal }) => {
   return (
-    <section id="sideProjects" className='flex flex-col items-center w-full h-full py-8 text-4xl font-bold laptop:text-[68px] laptop:leading-[68px] '>
+    <section id="sideProjects" className='flex flex-col items-center w-full h-full py-8 text-4xl font-bold dark:bg-gray-900 laptop:text-[68px] laptop:leading-[68px] '>
       <div
-        className=' flex justify-center py-6'
-        onClick={() => console.log(sideProjects)}
+        className=' flex justify-center py-6 dark:text-white'
       >
         SIDE PROJECTS
       </div>
-      <hr className='title-bottom bg-black' />
+      <hr className='title-bottom bg-black dark:bg-white' />
       <div className='flex flex-col max-w-6xl mx-auto laptop:grid laptop:grid-cols-3 laptop:w-3/5'>
         {sideProjects?.map(({ img, title, content, website }) => (
           <SideProject

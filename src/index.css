@@ -1,9 +1,9 @@
-:root {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Arial','Noto Sans TC', sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   scroll-behavior: smooth
 }
 

@@ -1,9 +1,62 @@
 import React, { useEffect, useState } from "react";
-import { CakeResumeIcon, GithubIcon, UserIcon } from "../assets/icons";
-
+import {
+  CakeResumeIcon,
+  DarkIcon,
+  GithubIcon,
+  LightIcon,
+  SystemIcon,
+  UserIcon,
+} from "../assets/icons";
 const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [goTop, setGoTOp] = useState(false);
+  // dark mode
+  const [theme, setTheme] = useState(
+    localStorage.getItem("them") ? localStorage.getItem("theme") : "system"
+  );
+  const element = document.documentElement;
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  // dark option
+  const option = [
+    //模式選項
+    {
+      icon: "sunny",
+      text: "light",
+    },
+    {
+      icon: "moon",
+      text: "dark",
+    },
+    {
+      icon: "SystemIcon",
+      text: "system",
+    },
+  ];
+  // 依條件渲染Icon
+const renderIcon = (icon) => {
+  switch (icon) {
+    case "sunny":
+      return <LightIcon />;
+    case "moon":
+      return <DarkIcon />;
+    case "SystemIcon":
+      return <SystemIcon />;
+    default:
+      return null;
+  }
+};
+  // system mode
+  function onWindowMatch() {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && darkQuery.matches)
+    ) {
+      element.classList.add("dark");
+    } else {
+      element.classList.remove("dark");
+    }
+  }
+  onWindowMatch();
   // 漢堡開關
   const handleToogleMenu = () => {
     if (window.innerWidth < 860) {
@@ -50,6 +103,23 @@ const Navbar = () => {
       }
     });
   }, []);
+  // 切換 light / dark / system
+  useEffect(() => {
+    switch (theme) {
+      case "dark":
+        element.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        break;
+      case "light":
+        element.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+        break;
+      default:
+        localStorage.removeItem("theme");
+        onWindowMatch();
+        break;
+    }
+  }, [theme]);
 
   return (
     <>
@@ -79,9 +149,22 @@ const Navbar = () => {
           }
           laptop:flex-row laptop:h-6 laptop:justify-center laptop:gap-6`}
         >
-          <div className='menu-btn normal-case flex items-center gap-6 laptop:gap-2 laptop:order-last laptop:flex-row-reverse'>
+          {/* <div className='menu-btn normal-case flex items-center gap-6 laptop:gap-2 laptop:order-last laptop:flex-row-reverse'>
             <UserIcon size={30} />
             Log in
+          </div> */}
+          <div className='laptop:gap-2 laptop:order-last laptop:flex-row-reverse'>
+            {option?.map((opt) => (
+              <button
+                key={opt.text}
+                onClick={() => setTheme(opt.text)}
+                className={`w-8 h-8 menu-btn duration-100 leading-9 text-xl rounded-full m-1 ${
+                  theme === opt.text && "text-sky-600"
+                }`}
+              >
+                {renderIcon(opt.icon)}
+              </button>
+            ))}
           </div>
           <a href='#home' className='menu-btn' onClick={handleToogleMenu}>
             Home
@@ -129,7 +212,7 @@ const Navbar = () => {
       </div>
       {/* GoTOP */}
       <div
-        className={`animate-bounce fixed right-10 bottom-10 w-20 h-20 bg-cover bg-center bg-GoTop z-30 ${
+        className={`animate-bounce fixed right-10 bottom-10 w-20 h-20 bg-cover bg-center bg-GoTop dark:bg-darkGoTop z-30 ${
           goTop ? "visible opacity-100" : "invisible opacity-0"
         } duration-300 cursor-pointer`}
         onClick={handleGoTop}

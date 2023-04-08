@@ -17,7 +17,7 @@ const SideProjectModal = ({
         }`}
       ></div>
       <div
-        className={`fixed top-0 bottom-0 right-0 left-0 m-auto w-full h-[calc(100%-64px)] flex flex-col items-center bg-white my-16 laptop:w-4/5 laptop:h-4/5 laptop:flex-row laptop:pt-0 ${
+        className={`fixed top-0 bottom-0 right-0 left-0 m-auto w-full h-[calc(100%-64px)] flex flex-col items-center bg-white dark:bg-gray-900 my-16 laptop:w-4/5 laptop:h-4/5 laptop:flex-row laptop:pt-0 ${
           isOpenSideProjectModal
             ? "translate-y-0 opacity-100 visible"
             : "translate-y-10 opacity-0 invisible"
@@ -30,7 +30,7 @@ const SideProjectModal = ({
             className=' absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full laptop:max-h-full'
           />
         </div>
-        <div className='flex flex-col items-center py-4 laptop:w-full laptop:h-full laptop:justify-start'>
+        <div className='flex flex-col items-center py-4 dark:text-white laptop:w-full laptop:h-full laptop:justify-start'>
           <h3
             className='text-xl font-bold pb-2'
           >

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -20,6 +21,17 @@ module.exports = {
         LanguageSkill: "url('../src/assets/icons/light/003.svg')",
         GoTop: "url('../src/assets/icons/light/gotop.png')",
         Logo: "url('../src/assets/images/Logo.png')",
+        darkHome: "url('../src/assets/images/dark/dark-mode001.jpg')",
+        darkSkills: "url('../src/assets/images/dark/dark-mode002.jpg')",
+        darkDownSection: "url('../src/assets/images/dark/dark-mode004.jpg')",
+        darkBgImgSection: "url('../src/assets/images/dark/dark-mode003.jpg')",
+        darkWorkSkill: "url('../src/assets/icons/dark/dark-mode-icon001.png')",
+        darkWebFrontend:
+          "url('../src/assets/icons/dark/dark-mode-icon002.png')",
+        darkLanguageSkill:
+          "url('../src/assets/icons/dark/dark-mode-icon003.png')",
+        darkGoTop: "url('../src/assets/icons/dark/dark-mode-gotop.png')",
+        darkLogo: "url('../src/assets/images/dark/dark-mode-Logo.png')",
       },
       keyframes: {
         marquee1: {

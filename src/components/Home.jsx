@@ -8,7 +8,7 @@ const Home = ({}) => {
   return (
     <section
       id='home'
-      className=' flex flex-col items-center justify-between w-full h-[calc(100vh-3rem)] bg-home bg-fixed bg-cover bg-center py-8'
+      className=' flex flex-col items-center justify-between w-full h-[calc(100vh-3rem)] bg-home dark:bg-darkHome bg-fixed bg-cover bg-center py-8'
     >
       <div className=' text-4xl text-white font-bold laptop:text-[68px] laptop:leading-[68px] '>
         <div className=' flex justify-center py-6'>BearK's PROFILES</div>

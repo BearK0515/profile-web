@@ -19,7 +19,7 @@ const Index = () => {
       <SideProjects setIsOpenSideProjectModal={setIsOpenSideProjectModal} />
       <div
         id='about-me'
-        className=' w-full h-full bg-downSection bg-fixed bg-cover bg-center py-8'
+        className=' w-full h-full bg-downSection dark:bg-darkDownSection bg-fixed bg-cover bg-center py-8'
       >
         <AboutMe />
         <SecondBanner />

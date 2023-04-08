@@ -5,12 +5,11 @@ const WorkExperience = () => {
   return (
     <section id='work-experiece' className=' flex flex-col items-center py-16'>
       <div
-        className=' w-44 h-60 bg-Logo bg-cover text-white animate-bounce'
-        onClick={() => console.log(jobs)}
+        className=' w-44 h-60 bg-Logo dark:bg-darkLogo bg-cover animate-bounce'
       />
-      <div className=' max-w-6xl w-full h-full bg-white mx-auto my-8 text-4xl font-bold laptop:text-[68px] laptop:leading-[68px] laptop:w-4/5'>
-        <div className=' flex justify-center py-6'>WORK EXPERIENCE</div>
-        <hr className='title-bottom bg-black' />
+      <div className=' max-w-6xl w-full h-full bg-white dark:bg-gray-900 mx-auto my-8 text-4xl font-bold laptop:text-[68px] laptop:leading-[68px] laptop:w-4/5'>
+        <div className=' flex justify-center py-6 dark:text-white'>WORK EXPERIENCE</div>
+        <hr className='title-bottom bg-black dark:bg-white' />
         <div className='timeline-container relative w-full p-10 pb-30 before:left-1/2 before:translate-x-1/2 before:-translate-y-5'>
           {jobs?.map(({ job, company, time, content }, index) => (
             <WorkExperienceCard

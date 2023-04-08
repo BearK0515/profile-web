@@ -5,7 +5,7 @@ import skills from "../constants/skills";
 
 const Skills = () => {
   return (
-    <section id="skills" className=' flex flex-col items-center justify-between w-full h-full bg-skills bg-fixed bg-cover bg-center py-8'>
+    <section id="skills" className=' flex flex-col items-center justify-between w-full h-full bg-skills dark:bg-darkSkills bg-fixed bg-cover bg-center py-8'>
       <div className=' w-full h-full text-4xl text-white font-bold laptop:text-[68px] laptop:leading-[68px] '>
         {/* Title */}
         <div
@@ -66,7 +66,7 @@ const Skill = ({ icon, content, title }) => {
   return (
     <div className='flex flex-col items-center gap-4 w-full mb-4 laptop:w-1/3'>
       {/* icon */}
-      <div className={`animate-ping2 w-[125px] h-[125px] ${icon} bg-cover text-white`} />
+      <div className={`animate-ping2 w-[125px] h-[125px] ${icon} bg-cover bg-center text-white`} />
       {/* title */}
       <h3 className='text-2xl'>{title}</h3>
       {/* content */}
