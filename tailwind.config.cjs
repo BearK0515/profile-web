@@ -9,7 +9,7 @@ module.exports = {
         "hover-color": "#b0aaa9",
       },
       screens: {
-        laptop: "860px",
+        laptop: "866px",
       },
       backgroundImage: {
         home: "url('../src/assets/images/light/NS-light-mode001.jpg')",
