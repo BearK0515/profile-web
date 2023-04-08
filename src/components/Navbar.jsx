@@ -33,19 +33,19 @@ const Navbar = () => {
     },
   ];
   // 依條件渲染Icon
-const renderIcon = (icon) => {
-  switch (icon) {
-    case "sunny":
-      return <LightIcon />;
-    case "moon":
-      return <DarkIcon />;
-    case "SystemIcon":
-      return <SystemIcon />;
-    default:
-      return null;
-  }
-};
-  // system mode
+  const renderIcon = (icon) => {
+    switch (icon) {
+      case "sunny":
+        return <LightIcon />;
+      case "moon":
+        return <DarkIcon />;
+      case "SystemIcon":
+        return <SystemIcon />;
+      default:
+        return null;
+    }
+  };
+  // window dark mode
   function onWindowMatch() {
     if (
       localStorage.theme === "dark" ||
