@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { CancleIcon } from "../assets/icons";
 import petsStore from "../assets/images/side-projects/pets-store.png";
 import sideProjects from "../constants/sideProjects";
@@ -37,7 +37,7 @@ const SideProjectModal = ({
             {sideProjects[0].title}
           </h3>
           <div className=' w-4/5 mx-auto text-base'>
-            {sideProjects[0].content.map((item)=>{return (<p>{item}</p>)})}
+            {sideProjects[0].content.map((item,index)=>{return (<p key={index}>{item}</p>)})}
           </div>
         </div>
         <button

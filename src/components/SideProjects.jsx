@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import petsStore from "../assets/images/side-projects/pets-store.png";
 import sideProjects from "../constants/sideProjects";
 
-const SideProjects = ({ setIsOpenSideProjectModal }) => {
+const SideProjects = ({ isLogin, setIsLogin,setIsOpenSideProjectModal }) => {
+
+  useEffect(() => {
+    if (isLogin) {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    }
+  }, [isLogin]);
+
   return (
-    <section id="sideProjects" className='flex flex-col items-center w-full h-full py-8 text-4xl font-bold dark:bg-gray-900 laptop:text-[68px] laptop:leading-[68px] '>
-      <div
-        className=' flex justify-center py-6 dark:text-white'
-      >
+    <section
+      id='sideProjects'
+      className='flex flex-col items-center w-full h-full py-8 text-4xl font-bold dark:bg-gray-900 laptop:text-[68px] laptop:leading-[68px] '
+    >
+      <div className=' flex justify-center py-6 dark:text-white'>
         SIDE PROJECTS
       </div>
       <hr className='title-bottom bg-black dark:bg-white' />
       <div className='flex flex-col max-w-6xl mx-auto laptop:grid laptop:grid-cols-3 laptop:w-3/5'>
-        {sideProjects?.map(({ img, title, content, website }) => (
+        {sideProjects?.map(({ img, title, content, website }, index) => (
           <SideProject
+            key={index}
             sideProjectImg={petsStore}
             title={title}
             content={content}
@@ -21,6 +32,14 @@ const SideProjects = ({ setIsOpenSideProjectModal }) => {
             setIsOpenSideProjectModal={setIsOpenSideProjectModal}
           />
         ))}
+        {isLogin && (
+          <div
+            key='a'
+            className='flex justify-center items-center bg-white hover:scale-[1.01] text-gray-400 duration-300 cursor-pointer'
+          >
+            +
+          </div>
+        )}
       </div>
     </section>
   );
@@ -44,8 +63,8 @@ const SideProject = ({
       >
         <h3 className=' text-xl '>{title}</h3>
         <div className=' w-4/5 text-base text-left overflow-hidden'>
-          {content.map((item) => {
-            return <p>{item}</p>;
+          {content.map((item, index) => {
+            return <p key={index}>{item}</p>;
           })}
         </div>
       </div>

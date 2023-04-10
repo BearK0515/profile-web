@@ -5,9 +5,8 @@ import {
   GithubIcon,
   LightIcon,
   SystemIcon,
-  UserIcon,
 } from "../assets/icons";
-const Navbar = () => {
+const Navbar = ({ handleLogout,setIsOpenLoginModal }) => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [goTop, setGoTOp] = useState(false);
   // dark mode
@@ -81,13 +80,13 @@ const Navbar = () => {
   // 依照視窗大小控制Navbar布局
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 860) {
+      if (window.innerWidth >= 866) {
         setIsOpenMenu(true);
       } else {
         setIsOpenMenu(false);
       }
     };
-    if (window.innerWidth >= 860) {
+    if (window.innerWidth >= 866) {
       setIsOpenMenu(true);
     }
     window.addEventListener("resize", handleResize);
@@ -216,6 +215,14 @@ const Navbar = () => {
           goTop ? "visible opacity-100" : "invisible opacity-0"
         } duration-300 cursor-pointer`}
         onClick={handleGoTop}
+      />
+      <div
+        className='fixed left-4 bottom-16 w-8 h-8 z-10'
+        onClick={() => setIsOpenLoginModal(true)}
+      />
+      <div
+        className='fixed left-4 bottom-4 w-8 h-8 z-10'
+        onClick={handleLogout}
       />
     </>
   );
