@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "../utils/firebase";
-import { signInWithEmailAndPassword } from "@Firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const LoginModal = ({
   isLogin,
