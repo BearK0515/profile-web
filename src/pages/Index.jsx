@@ -9,7 +9,7 @@ import WorkExperience from "../components/WorkExperience";
 import Footer from "../components/Footer";
 import SideProjectModal from "../commons/SideProjectModal";
 import LoginModal from "../commons/LoginModal";
-import { auth, signOut } from "../utils/firebase";
+import { auth } from "../utils/firebase";
 
 const Index = () => {
   const [isOpenSideProjectModal, setIsOpenSideProjectModal] = useState(false);
@@ -18,7 +18,6 @@ const Index = () => {
 
   // 登出
   const handleLogout = () => {
-    signOut(auth);
     localStorage.removeItem("isAuth");
     setIsLogin("");
   };
