@@ -20,7 +20,7 @@ const Index = () => {
   // 登出
   const handleLogout = () => {
     signOut(auth);
-    localStorage.removeItem("isAuth")
+    localStorage.removeItem("isAuth");
     setIsLogin("");
   };
   useEffect(() => {

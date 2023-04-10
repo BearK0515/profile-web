@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import { auth } from "../utils/firebase";
 import { signInWithEmailAndPassword } from "@Firebase/auth";
 
-const LoginModal = ({isLogin,setIsLogin, isOpenLoginModal, setIsOpenLoginModal }) => {
+const LoginModal = ({
+  isLogin,
+  setIsLogin,
+  isOpenLoginModal,
+  setIsOpenLoginModal,
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +18,7 @@ const LoginModal = ({isLogin,setIsLogin, isOpenLoginModal, setIsOpenLoginModal }
       const data = await signInWithEmailAndPassword(auth, email, password);
       if (data.user.accessToken) {
         setIsOpenLoginModal(false);
-        setIsLogin(true)
+        setIsLogin(true);
         return localStorage.setItem("isAuth", true);
       }
     } catch (error) {
@@ -31,16 +36,18 @@ const LoginModal = ({isLogin,setIsLogin, isOpenLoginModal, setIsOpenLoginModal }
 
   return (
     <>
-      {isLoading && <h2 className=" h-screen w-screen flex justify-center items-center  bg-white text-5xl">Loading...</h2>}
+      {isLoading && (
+        <h2 className=' h-screen w-screen flex justify-center items-center  bg-white text-5xl'>
+          Loading...
+        </h2>
+      )}
       <div
         className={`backdrop bg-black/30 z-10 ${
           isOpenLoginModal ? "visible" : "invisible"
         }`}
         onClick={() => setIsOpenLoginModal(false)}
       ></div>
-      <div
-        className=' w-96 flex flex-col gap-6 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-10 z-10'
-      >
+      <div className=' w-96 flex flex-col gap-6 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-10 z-10'>
         <h2 className=' text-center text-xl'>管理員登入</h2>
         <input
           type='text'
