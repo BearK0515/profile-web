@@ -9,8 +9,7 @@ import WorkExperience from "../components/WorkExperience";
 import Footer from "../components/Footer";
 import SideProjectModal from "../commons/SideProjectModal";
 import LoginModal from "../commons/LoginModal";
-import { auth } from "../utils/firebase";
-import { signOut } from "@Firebase/auth";
+import { auth, signOut } from "../utils/firebase";
 
 const Index = () => {
   const [isOpenSideProjectModal, setIsOpenSideProjectModal] = useState(false);
