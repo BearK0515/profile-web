@@ -217,11 +217,11 @@ const Navbar = ({ handleLogout, setIsOpenLoginModal }) => {
         onClick={handleGoTop}
       />
       <div
-        className='fixed left-0 bottom-12 w-8 h-8 bg-white z-10'
+        className='fixed left-0 bottom-12 w-8 h-8 z-10'
         onClick={handleLogout}
       />
       <div
-        className='fixed left-0 bottom-2 w-8 h-8 bg-white z-10'
+        className='fixed left-0 bottom-2 w-8 h-8 z-10'
         onClick={() => setIsOpenLoginModal(true)}
       />
     </>
