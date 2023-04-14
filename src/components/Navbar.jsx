@@ -222,7 +222,10 @@ const Navbar = ({ handleLogout, setIsOpenLoginModal }) => {
       />
       <div
         className='fixed left-0 bottom-2 w-8 h-8 z-10'
-        onClick={() => setIsOpenLoginModal(true)}
+        onClick={() => {
+          setIsOpenLoginModal(true);
+          document.body.style.overflow = "hidden";
+        }}
       />
     </>
   );

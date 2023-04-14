@@ -45,7 +45,10 @@ const LoginModal = ({
         className={`backdrop bg-black/30 z-10 ${
           isOpenLoginModal ? "visible" : "invisible"
         }`}
-        onClick={() => setIsOpenLoginModal(false)}
+        onClick={() => {
+          setIsOpenLoginModal(false);
+          document.body.style.overflow = "auto";
+        }}
       ></div>
       <div className=' w-96 flex flex-col gap-6 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-10 z-10'>
         <h2 className=' text-center text-xl'>管理員登入</h2>

@@ -1,13 +1,10 @@
 import React from "react";
 import { CancleIcon } from "../assets/icons";
-import petsStore from "../assets/images/side-projects/pets-store.png";
-import sideProjects from "../constants/sideProjects";
+
 const SideProjectModal = ({
-  img,
-  title,
-  content,
   isOpenSideProjectModal,
   setIsOpenSideProjectModal,
+  project,
 }) => {
   return (
     <>
@@ -25,19 +22,17 @@ const SideProjectModal = ({
       >
         <div className=' relative w-full h-[50%] py-4 overflow-hidden laptop:max-w-[50%] laptop:h-full flex justify-center items-center'>
           <img
-            src={petsStore}
+            src={project?.url}
             alt=''
             className=' absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full laptop:max-h-full'
           />
         </div>
         <div className='flex flex-col items-center py-4 dark:text-white laptop:w-full laptop:h-full laptop:justify-start'>
-          <h3
-            className='text-xl font-bold pb-2'
-          >
-            {sideProjects[0].title}
-          </h3>
+          <h3 className='text-xl font-bold pb-2'>{project?.title}</h3>
           <div className=' w-4/5 mx-auto text-base'>
-            {sideProjects[0].content.map((item,index)=>{return (<p key={index}>{item}</p>)})}
+            {project?.description.map((item, index) => {
+              return <p key={index}>{item}</p>;
+            })}
           </div>
         </div>
         <button

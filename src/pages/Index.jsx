@@ -9,12 +9,19 @@ import WorkExperience from "../components/WorkExperience";
 import Footer from "../components/Footer";
 import SideProjectModal from "../commons/SideProjectModal";
 import LoginModal from "../commons/LoginModal";
-import { auth } from "../utils/firebase";
+import AddSideProjectModal from "../commons/AddSideProjectModal";
+import { db } from "../utils/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const Index = () => {
   const [isOpenSideProjectModal, setIsOpenSideProjectModal] = useState(false);
   const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isOpenAddSideProjectModal, setIsOpenAddSideProjectModal] =
+    useState(false);
+    const login = localStorage.getItem("isAuth")
+  const [isLogin, setIsLogin] = useState(login);
+  const [sideProject, setSideProject] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   // 登出
   const handleLogout = () => {
@@ -28,6 +35,21 @@ const Index = () => {
       setIsLogin(false);
     }
   }, [isLogin]);
+
+  useEffect(() => {
+    const sideProjectsRef = collection(db, "sideProjecs");
+    getDocs(sideProjectsRef)
+      .then((snapshot) => {
+        let sideProjects = [];
+        snapshot.docs.forEach((doc) => {
+          sideProjects.push({ ...doc.data(), id: doc.id });
+        });
+        setSideProject(sideProjects);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
 
   return (
     <>
@@ -43,6 +65,11 @@ const Index = () => {
         isLogin={isLogin}
         setIsLogin={setIsLogin}
         setIsOpenSideProjectModal={setIsOpenSideProjectModal}
+        setIsOpenAddSideProjectModal={setIsOpenAddSideProjectModal}
+        sideProject={sideProject}
+        setSideProject={setSideProject}
+        selectedProject={selectedProject}
+        setSelectedProject={setSelectedProject}
       />
       <div
         id='about-me'
@@ -54,6 +81,8 @@ const Index = () => {
       </div>
       <Footer />
       <SideProjectModal
+        project={sideProject.find((project) => project.id === selectedProject)}
+        sideProject={sideProject}
         isOpenSideProjectModal={isOpenSideProjectModal}
         setIsOpenSideProjectModal={setIsOpenSideProjectModal}
       />
@@ -63,6 +92,12 @@ const Index = () => {
           setIsLogin={setIsLogin}
           isOpenLoginModal={isOpenLoginModal}
           setIsOpenLoginModal={setIsOpenLoginModal}
+        />
+      )}
+      {isOpenAddSideProjectModal && (
+        <AddSideProjectModal
+          isOpenAddSideProjectModal={isOpenAddSideProjectModal}
+          setIsOpenAddSideProjectModal={setIsOpenAddSideProjectModal}
         />
       )}
     </>
