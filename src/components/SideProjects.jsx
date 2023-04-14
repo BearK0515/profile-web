@@ -25,7 +25,7 @@ const SideProjects = ({
         SIDE PROJECTS
       </div>
       <hr className='title-bottom bg-black dark:bg-white' />
-      <div className='flex flex-col max-w-6xl mx-auto laptop:grid laptop:grid-cols-3 laptop:w-3/5'>
+      <div className='w-4/5 max-w-6xl mx-auto grid grid-cols-1 laptop:grid-cols-3 laptop:w-3/5'>
         {sideProject?.map(({ description, title, url, id }) => (
           <SideProject
             key={id}
