@@ -19,6 +19,7 @@ const LoginModal = ({
       if (data.user.accessToken) {
         setIsOpenLoginModal(false);
         setIsLogin(true);
+        document.body.style.overflow = "auto";
         return localStorage.setItem("isAuth", true);
       }
     } catch (error) {
@@ -31,6 +32,7 @@ const LoginModal = ({
   useEffect(() => {
     if (isLogin) {
       setIsOpenLoginModal(false);
+      document.body.style.overflow = "auto";
     }
   }, [isLogin]);
 
