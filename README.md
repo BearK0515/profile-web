@@ -15,12 +15,15 @@
   - 工作經歷
   - 使用RWD做手機版及桌機版排版
   - 日夜間模式
+  - 登入功能
+  - 上傳作品集功能
 
 ## 開發工具
 
 - Vite：4.2.0 - 建立專案項目環境
 - React：18.2.0 - Function Components + Hooks
 - Prettier - 統一程式碼格式
-- [react-icons: 4.8.0] - 各種小 icon 引用
-- [tailwindcss: 3.2.7] - CSS框架
-- [gh-pages] - 用於將專案 Demo 部署至 GitHub Pages
+- react-icons: 4.8.0 - 各種小 icon 引用
+- tailwindcss: 3.2.7 - CSS框架
+- gh-pages - 用於將專案 Demo 部署至 GitHub Pages
+- firebase: 9.19.1 - 儲存上傳圖片及資料，並且fetch data用於畫面渲染
