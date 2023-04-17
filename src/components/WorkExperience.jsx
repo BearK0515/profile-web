@@ -46,7 +46,7 @@ const WorkExperienceCard = ({ index, job, company, time, content }) => {
         <div className=' relative w-full'>
           <h3 className=' text-2xl text-center'>{job}</h3>
           <div className='text-xl text-center'>{company}</div>
-          <div className=' absolute -right-1 -bottom-4 text-base'>{time}</div>
+          <div className=' absolute -right-1 -top-8 text-base text-blue-500 dark:text-white'>{time}</div>
         </div>
         <div
           className={`absolute top-[calc(100%+20px)] ${
