@@ -62,7 +62,6 @@ const SideProject = ({
   title,
   description,
   setIsOpenSideProjectModal,
-  selectedProject,
   setSelectedProject,
 }) => {
   return (
@@ -70,8 +69,6 @@ const SideProject = ({
       key={id}
       className=' relative aspect-[3/4] bg-white flex justify-center items-center bg-cover bg-center'
       style={{ backgroundImage: `url(${url})` }}
-      // onClick={() => {setSelectedProject(id)
-      // console.log(selectedProject);}}
     >
       <div
         className='absolute top-0 bottom-0 right-0 left-0 flex flex-col items-center border-2 border-transparent text-white font-normal tracking-wider bg-black/50 pt-4 opacity-0 hover:opacity-100 duration-700 cursor-pointer '

@@ -36,20 +36,23 @@ const Index = () => {
     }
   }, [isLogin]);
 
+  //GET side projects
   useEffect(() => {
-    const sideProjectsRef = collection(db, "sideProjecs");
-    getDocs(sideProjectsRef)
-      .then((snapshot) => {
-        let sideProjects = [];
-        snapshot.docs.forEach((doc) => {
-          sideProjects.push({ ...doc.data(), id: doc.id });
-        });
+    const fetchSideProjects = async () => {
+      try {
+        const sideProjectsRef = collection(db, "sideProjecs");
+        const snapshot = await getDocs(sideProjectsRef);
+        const sideProjects = snapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
         setSideProject(sideProjects);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.log(err.message);
-      });
-  }, []);
+      }
+    };
+    fetchSideProjects();
+  }, [isOpenAddSideProjectModal]);
 
   return (
     <>
