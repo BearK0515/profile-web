@@ -18,7 +18,7 @@ const Index = () => {
   const [isOpenLoginModal, setIsOpenLoginModal] = useState(false);
   const [isOpenAddSideProjectModal, setIsOpenAddSideProjectModal] =
     useState(false);
-    const login = localStorage.getItem("isAuth")
+  const login = localStorage.getItem("isAuth");
   const [isLogin, setIsLogin] = useState(login);
   const [sideProject, setSideProject] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
