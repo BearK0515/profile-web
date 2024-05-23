@@ -1,5 +1,17 @@
 const jobs = [
   {
+    job: "前端工程師",
+    company: "國興資訊",
+    time: "2023-在職中",
+    content: [
+      "1.協助其他部門解決前端相關問題",
+      "2.tailwind切版套件",
+      "3.React、Vue前端框架",
+      "4.串接前後端API",
+      "5.Git版本控制",
+    ],
+  },
+  {
     job: "前端工程師學員",
     company: "Alpha Camp ",
     time: "2022-2023",
